@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #3B0000;
+    color: #FFF6CD;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo ul a {
+    text-decoration: none;
+    color: #FFF6CD;
+    padding: 0 10px; /* Adjust the padding as per your need */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #FFF6CD;
+    text-decoration: none;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 5px;
+    border: 1px solid #FFF6CD;
+    background-color: #3B0000;
+    color: #FFF6CD;
+    border-radius: 3px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 5px 10px;
+    background-color: #FFF6CD;
+    color: #3B0000;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+
+.search-form input::placeholder {
+    color: #FFF6CD;
+}
+
+.home {
+    background: url('home-card.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 300px 0;
+    text-align: center;
+}
+
+.shop-now-btn {
+    background-color: #ff0000;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card button {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #3B0000;
+    color: #FFF6CD;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.footer ul li a{
+    text-decoration: none;
+    color: #FFF6CD;
+
+}
+
+
