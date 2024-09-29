@@ -8,30 +8,7 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <ul>
-                    <a href="#"><img src="logo nbf.PNG"></a>
-                    <a href="#">HOME</a>
-                    <a href="#">Women</a>
-                    <a href="#">Men</a>
-                    <a href="#">kids</a>
-
-                </ul>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <form class="search-form" action="#" method="get">
-                            <input type="text" placeholder="Search for footwear" name="search">
-                            <button type="submit">Search</button>
-                        </form>
-                    </li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Cart (0)</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </nav>
+        <div id="header">
         </div>
     </header>
 
@@ -49,37 +26,37 @@
             <div class="product-card">
                 <img src="sports shoe.PNG" alt="Sports Shoe">
                 <h3> Sports Shoe</h3>
-                <p class="price">$49.99</p>
+                <p class="price">Rs 349.99</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="women formal.PNG" alt="Women's formal">
                 <h3> Women's Formal</h3>
-                <p class="price">$49.99</p>
+                <p class="price">Rs 449.99</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="kids shoe.PNG" alt="kid's shoes">
+                <img src="boys_footwear.PNG" alt="kid's shoes">
                 <h3>kid's shoes</h3>
-                <p class="price">$49.99</p>
+                <p class="price">Rs 249.99</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="men casual.PNG" alt="Men's Casual Shoe">
                 <h3>Men's Casual Shoe</h3>
-                <p class="price">$49.99</p>
+                <p class="price">Rs 149.99</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="women casual.PNG" alt="Women's Casual Shoe">
                 <h3>Women's Casual Shoe</h3>
-                <p class="price">$39.99</p>
+                <p class="price">Rs 239.99</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="men formal.PNG" alt="Men's Formal Shoe">
                 <h3>Men's Formal Shoe</h3>
-                <p class="price">$59.99</p>
+                <p class="price">Rs 259.99</p>
                 <button>Add to Cart</button>
             </div>
         </div>
@@ -98,3 +75,10 @@
     </footer>
 </body>
 </html>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+</script>
