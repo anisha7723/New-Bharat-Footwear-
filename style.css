@@ -6,10 +6,12 @@ body {
     box-sizing: border-box;
 }
 
+/* Header Styles */
 header {
     background-color: #3B0000;
     color: #FFF6CD;
     padding: 10px 0;
+    font-size: large;
 }
 
 header .container {
@@ -31,6 +33,8 @@ header .container {
     text-decoration: none;
     color: #FFF6CD;
     padding: 0 10px; /* Adjust the padding as per your need */
+    font-size: x-large;
+    font-weight: bolder;
 }
 
 nav ul {
@@ -49,6 +53,49 @@ nav ul li a {
     color: #FFF6CD;
     text-decoration: none;
 }
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Initially hidden dropdown content */
+.dropdown-content {
+    display: none; /* Keeps it hidden */
+    position: absolute;
+    background-color: #FFF6CD;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Dropdown items */
+.dropdown-content li {
+    padding: 8px 16px;
+}
+
+.dropdown-content li a {
+    text-decoration: none;
+    color: #3B0000;
+    display: block;
+    padding: 8px 16px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Search Form Styles */
 .search-form {
     display: flex;
     align-items: center;
@@ -77,6 +124,7 @@ nav ul li a {
     color: #FFF6CD;
 }
 
+/* Home Section */
 .home {
     background: url('home-card.jpg') no-repeat center center/cover;
     color: white;
@@ -93,6 +141,7 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Product Grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -119,17 +168,86 @@ nav ul li a {
     cursor: pointer;
 }
 
+/* Footer Styles */
 footer {
     background-color: #3B0000;
     color: #FFF6CD;
     padding: 20px;
     text-align: center;
-    text-decoration: none;
 }
-.footer ul li a{
+
+/* Form Styles */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #FFF6CD;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    color: #3B0000;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+    color: #3B0000;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #3B0000;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3B0000;
+    color: #FFF6CD;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #ff6347;
+}
+
+.form-container p {
+    margin-top: 15px;
+}
+
+.form-container a {
+    color: #3B0000;
+    text-decoration: underline;
+}
+
+
+body footer {
+    margin-top: 200px;
+    padding-top: 100px;
+}
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer ul li a {
     text-decoration: none;
     color: #FFF6CD;
-
 }
-
-
