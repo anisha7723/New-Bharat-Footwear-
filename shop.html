@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Bharat Footwear</title>
-    <link rel="stylesheet" href="indexcss.css"> 
+    <title>Shop - New Bharat Footwear</title>
+    <link rel="stylesheet" href="shopcss.css">
 </head>
 <body>
     <header>
@@ -15,10 +15,28 @@
 
     <section class="home">
         <div class="home-content">
-            <h1>YOUR ONE-STOP DESTINATION FOR TRENDY FOOTWEAR</h1>
-            <p>Shop the latest footwear trends now!</p>
-            <a href="shop.html" class="shop-now-btn">Shop Now</a>
+            <h1>Shop Our Collection</h1>
+            <p>Discover the latest trends in footwear.</p>
         </div>
+    </section>
+
+    <section class="filters">
+        <h2>Filter Products</h2>
+        <h3>Categories</h3>
+        <label><input type="checkbox" value="sports"> Sports Shoes</label><br>
+        <label><input type="checkbox" value="formal"> Formal Shoes</label><br>
+        <label><input type="checkbox" value="casual"> Casual Shoes</label><br>
+
+        <h3>Price Range</h3>
+        <input type="number" placeholder="Min Price" id="min-price"> - 
+        <input type="number" placeholder="Max Price" id="max-price"><br>
+
+        <h3>Sizes</h3>
+        <label><input type="checkbox" value="6"> 6</label><br>
+        <label><input type="checkbox" value="7"> 7</label><br>
+        <label><input type="checkbox" value="8"> 8</label><br>
+        <label><input type="checkbox" value="9"> 9</label><br>
+        <label><input type="checkbox" value="10"> 10</label><br>
     </section>
 
     <section class="featured-products">
@@ -88,6 +106,16 @@
             .then(data => {
                 document.getElementById('header').innerHTML = data;
             });
+
+        // Add to Cart functionality
+        const addToCartButtons = document.querySelectorAll('.product-card button');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Item added to cart!');
+                // More functionality can be added here
+            });
+        });
     </script>
 </body>
 </html>

@@ -4,43 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="headercss.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <ul>
-                    <li>
-                        <a href="index.html"><img src="logo nbf.PNG" alt="Logo"></a>
-                    </li>
-                    <li><a href="index.html">HOME</a></li>
-                    <li class="dropdown">
-                        <a href="women.html">Women</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="men.html">Men</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="kids.html">Kids</a>
-                    </li>
-                </ul>
-            </div>
-
-            <nav>
-                <ul>
-                    <li>
-                        <form class="search-form" action="#" method="get">
-                            <input type="text" placeholder="Search..." name="search">
-                            <button type="submit">Go</button>
-                        </form>
-                    </li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Cart (0)</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="header-container">
+        <div class="header-title">
+            <p>NEW BHARAT FOOTWEAR</p>
         </div>
-    </header>
-</body>
+        <ul class="nav-menu">
+            <li onclick="setMenu('shop')">
+                <a href="/" class="nav-link">SHOP</a>
+                <div id="shop-underline" class="underline"></div>
+            </li>
+            <li onclick="setMenu('men')">
+                <a href="/men" class="nav-link">MEN</a>
+                <div id="men-underline" class="underline"></div>
+            </li>
+            <li onclick="setMenu('women')">
+                <a href="/women" class="nav-link">WOMEN</a>
+                <div id="women-underline" class="underline"></div>
+            </li>
+            <li onclick="setMenu('kids')">
+                <a href="/kids" class="nav-link">KIDS</a>
+                <div id="kids-underline" class="underline"></div>
+            </li>
+        </ul>
+        <div class="nav-login-cart">
+            <a href="/login"><button class="login-btn">Login</button></a>
+            <a href="/cart">
+                <img src="cart_icon.png" width="50px" alt="Cart Icon">
+            </a>
+            <div class="nav-cart-count">0</div>
+        </div>
+    </div>
+    
+</header>
 </html>
+<script>
+    let currentMenu = '';
+
+    function setMenu(menu) {
+        // Clear previous underline
+        document.querySelectorAll('.underline').forEach(el => el.style.display = 'none');
+
+        // Set the current menu's underline to be visible
+        document.getElementById(menu + '-underline').style.display = 'block';
+    }
+</script>
