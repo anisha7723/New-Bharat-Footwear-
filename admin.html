@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    label {
+        margin-top: 10px;
+        display: block;
+        font-weight: bold;
+    }
+
+    input, textarea, select, button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #28a745;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Add New Product</h1>
+        <form action="add_product.php" method="post" enctype="multipart/form-data">
+            <label for="seller_id">Seller ID:</label>
+            <input type="number" name="seller_id" id="seller_id" required>
+
+            <label for="product_name">Product Name:</label>
+            <input type="text" name="product_name" id="product_name" required>
+
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" rows="4"></textarea>
+
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" step="0.01" required>
+
+            <label for="stock">Stock:</label>
+            <input type="number" name="stock" id="stock">
+
+            <label for="category">Category:</label>
+            <select name="category" id="category" required>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                <option value="Kids">Kids</option>
+            </select>
+
+            <label for="image_url">Product Image:</label>
+            <input type="file" name="image_url" id="image_url" accept="image/*">
+
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+</body>
+</html>
