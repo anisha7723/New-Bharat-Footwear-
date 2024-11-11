@@ -13,7 +13,9 @@ if ($conn->connect_error) {
 }
 
 // Assuming the user ID is stored in the session for demo purposes
-$user_id = $_SESSION['user_id'] ?? 1;
+$user_id = $_SESSION['user_id'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +35,10 @@ $user_id = $_SESSION['user_id'] ?? 1;
         <nav>
             <ul>
                 <li><a href="employer_homee.php">Home</a></li>
-                <li><a href="category.php">Categories</a></li>
-                <li><a href="search.php">Jobs</a></li>
-                <li><a href="empdash.php">Dashboard</a></li>
-                <li><a href="#footer">Contact</a></li>
-                <li><a href="#footer">About</a></li>
+               
+                <li><a href="view_applications.php">Dashboard</a></li>
+              
+                <li><a href="#about">About</a></li>
                 <li>
                     <form class="search-form" action="search.php" method="GET">
                         <input type="text" name="search" placeholder="Search jobs...">
@@ -120,48 +121,6 @@ $user_id = $_SESSION['user_id'] ?? 1;
             </div>
         </section>
 
-        <section class="categories">
-            <h2>Explore Job Categories</h2>
-            <div class="category-cards">
-                <a href="jobs.php?category=Web-dev">
-                    <div class="card">
-                        <img src="image/web.jpeg" alt="Web Development" class="category-image">
-                        <span>Technology</span>
-                    </div>
-                </a>
-                <a href="jobs.php?category=Marketing">
-                    <div class="card">
-                        <img src="image/marketing.jpeg" alt="Marketing" class="category-image">
-                        <span>Marketing</span>
-                    </div>
-                </a>
-                <a href="jobs.php?category=Design">
-                    <div class="card">
-                        <img src="image/design.jpeg" alt="Design" class="category-image">
-                        <span>Design</span>
-                    </div>
-                </a>
-                <a href="jobs.php?category=Finance">
-                    <div class="card">
-                        <img src="image/finance.jpeg" alt="Finance" class="category-image">
-                        <span>Finance</span>
-                    </div>
-                </a>
-                <a href="jobs.php?category=Education">
-                    <div class="card">
-                        <img src="image/education.jpeg" alt="Education" class="category-image">
-                        <span>Education</span>
-                    </div>
-                </a>
-                <a href="jobs.php?category=Healthcare">
-                    <div class="card">
-                        <img src="image/health.jpeg" alt="Healthcare" class="category-image">
-                        <span>Healthcare</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
         <section id="job" class="content-section visible">
             <?php
             // Fetching job postings for the logged-in employer
@@ -177,16 +136,17 @@ $user_id = $_SESSION['user_id'] ?? 1;
                 while ($job = $job_result->fetch_assoc()) {
                     echo "<div class='job-listing'>
                             <h4>{$job['job_title']}</h4>
-                            <p><strong>Pay:</strong> \${$job['job_pay']}/hr</p>
+                            <p><strong>Pay: Rs</strong> {$job['job_pay']}/hr</p>
                             <p><strong>Category:</strong> {$job['job_category']}</p>
                             <p><strong>Description:</strong> {$job['job_description']}</p>
                             <p><strong>Skills Needed:</strong> {$job['job_skills']}</p>
                             <p><strong>Hours:</strong> {$job['job_hours']}</p>
                             <p><strong>Job Type:</strong> {$job['job_type']}</p>
                             <p><strong>Deadline:</strong> {$job['job_deadline']}</p>
-                            <a href='view_applications.php?job_id={$job['id']}' class='view-applications-button'>View Applications</a>
+                            <a href=\"updated_view_application.php?job_id=" . $job['id'] . "\">View Applications</a>
                           </div>";
                 }
+                
 
                 echo "</div>"; // End of job-cards flex container
             } else {
@@ -196,25 +156,7 @@ $user_id = $_SESSION['user_id'] ?? 1;
             ?>
         </section>
 
-        <section id="dash" class="dashboard-overview">
-            <h2>Your Dashboard</h2>
-            <p>Number of Job Postings: 10</p>
-            <p>Number of Applications Received: 25</p>
-            <p>Average Time to Hire: 14 days</p>
-            <a href="#">View Dashboard</a>
-        </section>
-
-        <section class="contact">
-            <h2>Need Assistance?</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-
-        <section class="about">
+        <section class="about" id="about">
             <h2>About Us</h2>
             <p>Learn more about our mission and values.</p>
         </section>
