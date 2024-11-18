@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Products</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Style */
+        body {
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .upload-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Form Style */
+        .upload-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-section label {
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .upload-section input[type="text"],
+        .upload-section input[type="number"],
+        .upload-section input[type="file"],
+        .upload-section select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .upload-section input[type="text"]:focus,
+        .upload-section input[type="number"]:focus,
+        .upload-section select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .upload-section select {
+            cursor: pointer;
+        }
+
+        .upload-section input[type="file"] {
+            border: none;
+        }
+
+        .upload-section button {
+            padding: 12px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-section button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .upload-section {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Upload Products Form -->
+    <section class="upload-section">
+        <h2>Upload New Product</h2>
+        <form action="php/upload_products.php" method="POST" enctype="multipart/form-data">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="supplier">Supplier:</label>
+            <input type="text" id="supplier" name="supplier" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="women">Women</option>
+                <option value="men">Men</option>
+                <option value="girls">Girls</option>
+                <option value="kids">Kids</option>
+            </select>
+
+            <label for="amount">Amount (₹):</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="stock">Stock Quantity:</label>
+            <input type="number" id="stock" name="stock" required>
+
+            <label for="image">Product Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit" name="upload">Upload Product</button>
+        </form>
+    </section>
+</body>
+</html>
